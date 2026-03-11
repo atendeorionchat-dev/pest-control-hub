@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import VideoSection from "@/components/VideoSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import UnitsSection from "@/components/UnitsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -23,7 +24,7 @@ const jsonLd = {
     addressCountry: "BR",
   },
   priceRange: "$$",
-  areaServed: ["Ribeirão Preto", "Franca", "Uberaba", "Araraquara", "Guarapuava"],
+  areaServed: ["Ribeirão Preto", "Franca", "Uberaba", "Araraquara", "Guarapuava", "Barretos"],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
@@ -52,6 +53,7 @@ const Index = () => (
       <ServicesSection />
       <VideoSection />
       <TestimonialsSection />
+      <UnitsSection />
       <CTASection />
     </main>
     <Footer />
