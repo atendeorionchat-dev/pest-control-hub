@@ -98,6 +98,14 @@ const ServicesSection = () => (
           </article>
         ))}
       </div>
+
+      <div className="text-center mt-12">
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+          <Button size="lg" className="btn-whatsapp text-base px-8 py-6 rounded-lg font-bold gap-2 animate-pulse">
+            <ArrowRight className="w-5 h-5" /> Solicite seu Orçamento Agora!
+          </Button>
+        </a>
+      </div>
     </div>
   </section>
 );

@@ -1,4 +1,12 @@
-import { Play } from "lucide-react";
+import { MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const WHATSAPP_LINK = "https://wa.me/5516974007842?text=Olá! Gostaria de fazer um orçamento.";
+
+const videos = [
+  { src: "https://www.youtube.com/embed/g_3u3VzRIv4", title: "Depoimento de cliente Bioforte 1" },
+  { src: "https://www.youtube.com/embed/3-1c1Th0W6Y", title: "Depoimento de cliente Bioforte 2" },
+];
 
 const VideoSection = () => (
   <section className="py-20 md:py-28 bg-background" aria-labelledby="video-heading">
@@ -11,26 +19,31 @@ const VideoSection = () => (
           Veja o que nossos clientes dizem
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Assista ao vídeo e conheça um pouco mais sobre nosso trabalho e a satisfação dos nossos clientes.
+          Assista aos depoimentos e conheça a satisfação de quem já contratou nossos serviços.
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto">
-        <div className="relative aspect-video rounded-2xl overflow-hidden bg-muted border border-border shadow-lg">
-          {/* Placeholder for embedded video – replace src with actual video URL */}
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Bioforte Dedetizadora - Conheça nosso trabalho"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-          />
-          {/* If no iframe, show a play button placeholder */}
-        </div>
-        <p className="text-center text-muted-foreground text-sm mt-4">
-          * Substitua o vídeo acima pelo vídeo institucional da Bioforte
-        </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {videos.map((v) => (
+          <div key={v.src} className="relative aspect-video rounded-2xl overflow-hidden bg-muted border border-border shadow-lg">
+            <iframe
+              className="w-full h-full"
+              src={v.src}
+              title={v.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="text-center mt-10">
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+          <Button size="lg" className="btn-whatsapp text-base px-8 py-6 rounded-lg font-bold gap-2">
+            <MessageCircle className="w-5 h-5" /> Faça seu Orçamento Grátis
+          </Button>
+        </a>
       </div>
     </div>
   </section>

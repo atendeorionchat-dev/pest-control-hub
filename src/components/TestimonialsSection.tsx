@@ -51,6 +51,14 @@ const TestimonialsSection = () => (
           </article>
         ))}
       </div>
+
+      <div className="text-center mt-10">
+        <a href="https://wa.me/5516974007842?text=Olá! Gostaria de fazer um orçamento." target="_blank" rel="noopener noreferrer">
+          <Button size="lg" className="btn-whatsapp text-base px-8 py-6 rounded-lg font-bold gap-2">
+            <MessageCircle className="w-5 h-5" /> Quero um Orçamento Sem Compromisso
+          </Button>
+        </a>
+      </div>
     </div>
   </section>
 );
