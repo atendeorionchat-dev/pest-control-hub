@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle } from "lucide-react";
+import { MapPin, Building2, Handshake, UserCheck, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK = "https://wa.me/5516974007842?text=Olá! Gostaria de fazer um orçamento.";
@@ -20,10 +20,10 @@ const units: Unit[] = [
   { name: "Barretos", state: "SP", type: "franquia" },
 ];
 
-const typeConfig: Record<UnitType, { label: string; color: string }> = {
-  propria: { label: "Unidade Própria", color: "bg-primary" },
-  franquia: { label: "Franquia", color: "bg-accent" },
-  licenciado: { label: "Licenciado", color: "bg-yellow-500" },
+const typeConfig: Record<UnitType, { label: string; color: string; icon: typeof Building2 }> = {
+  propria: { label: "Unidade Própria", color: "bg-primary", icon: Building2 },
+  franquia: { label: "Franquia", color: "bg-accent", icon: Handshake },
+  licenciado: { label: "Licenciado", color: "bg-muted-foreground", icon: UserCheck },
 };
 
 const UnitsSection = () => (
@@ -41,9 +41,9 @@ const UnitsSection = () => (
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-        {/* Map via iframe */}
-        <div className="lg:col-span-3 rounded-2xl overflow-hidden border border-border shadow-lg h-[400px] md:h-[480px]">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+        {/* Map */}
+        <div className="lg:col-span-3 rounded-2xl overflow-hidden border border-border shadow-lg h-[420px] md:h-[540px]">
           <iframe
             title="Localização das unidades Bioforte"
             src="https://www.openstreetmap.org/export/embed.html?bbox=-53.0%2C-26.5%2C-44.0%2C-19.0&layer=mapnik"
@@ -52,32 +52,47 @@ const UnitsSection = () => (
           />
         </div>
 
-        {/* Unit list */}
-        <div className="lg:col-span-2 space-y-3">
-          <div className="flex flex-wrap gap-4 mb-6 p-4 rounded-xl bg-secondary border border-border">
-            <span className="text-sm font-semibold text-foreground mr-1">Legenda:</span>
-            {Object.values(typeConfig).map((t) => (
-              <span key={t.label} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <span className={`w-3 h-3 rounded-full ${t.color}`} />
-                {t.label}
-              </span>
-            ))}
+        {/* Right side */}
+        <div className="lg:col-span-2 space-y-4">
+          {/* Legend */}
+          <div className="p-5 rounded-2xl bg-card border border-border shadow-sm">
+            <p className="text-xs font-bold tracking-widest uppercase text-foreground mb-4">Legenda</p>
+            <div className="space-y-3">
+              {Object.values(typeConfig).map((t) => {
+                const Icon = t.icon;
+                return (
+                  <span key={t.label} className="flex items-center gap-3 text-sm text-foreground">
+                    <span className={`w-8 h-8 rounded-lg ${t.color} flex items-center justify-center`}>
+                      <Icon className="w-4 h-4 text-primary-foreground" />
+                    </span>
+                    {t.label}
+                  </span>
+                );
+              })}
+            </div>
           </div>
 
-          {units.map((u) => (
-            <div key={u.name} className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
-              <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold text-sm text-card-foreground">{u.name}</p>
-                <p className="text-xs text-muted-foreground">{u.state}</p>
+          {/* Unit cards */}
+          {units.map((u) => {
+            const config = typeConfig[u.type];
+            const Icon = config.icon;
+            return (
+              <div key={u.name} className="flex items-center gap-4 p-4 rounded-2xl bg-card border border-border shadow-sm">
+                <span className={`w-10 h-10 rounded-xl ${config.color} flex items-center justify-center flex-shrink-0`}>
+                  <Icon className="w-5 h-5 text-primary-foreground" />
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-sm text-card-foreground">{u.name}</p>
+                  <p className="text-xs text-muted-foreground">{config.label}</p>
+                </div>
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-secondary text-secondary-foreground">
+                  {u.state}
+                </span>
               </div>
-              <span className={`text-xs font-medium px-2.5 py-1 rounded-full text-primary-foreground ${typeConfig[u.type].color}`}>
-                {typeConfig[u.type].label}
-              </span>
-            </div>
-          ))}
+            );
+          })}
 
-          <div className="pt-4">
+          <div className="pt-2">
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="btn-whatsapp text-base px-6 py-6 rounded-lg font-bold gap-2 w-full">
                 <MessageCircle className="w-5 h-5" /> Fale com a unidade mais próxima
