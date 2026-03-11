@@ -42,7 +42,7 @@ const HeroSection = () => (
             </Button>
           </a>
           <a href="tel:+5516974007842">
-            <Button size="lg" variant="outline" className="text-base px-7 py-6 rounded-lg font-semibold gap-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 w-full sm:w-auto">
+            <Button size="lg" variant="outline" className="text-base px-7 py-6 rounded-lg font-semibold gap-2 border-primary text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 w-full sm:w-auto">
               <Phone className="w-4 h-4" /> (16) 97400-7842
             </Button>
           </a>
