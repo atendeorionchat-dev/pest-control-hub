@@ -1,6 +1,6 @@
 import { Phone, ArrowRight, Shield, Users, Award, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/bioforte-team.jpg";
+import heroImg from "@/assets/03.png";
 
 const WHATSAPP_LINK = "https://wa.me/5516974007842?text=Olá! Gostaria de fazer um orçamento.";
 

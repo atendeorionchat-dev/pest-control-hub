@@ -1,9 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import servicePragas from "@/assets/service-pragas.jpg";
-import servicePassaros from "@/assets/service-passaros.jpg";
-import serviceCupins from "@/assets/service-cupins.jpg";
+import servicePragas from "@/assets/2026-03-11_08h20_48.png";
+import servicePassaros from "@/assets/2026-03-11_08h20_58.png";
+import serviceCupins from "@/assets/2026-03-11_08h21_15.png";
 import serviceCaixa from "@/assets/service-caixa.jpg";
 import serviceAbelhas from "@/assets/service-abelhas.jpg";
 import serviceSanitizacao from "@/assets/service-sanitizacao.jpg";

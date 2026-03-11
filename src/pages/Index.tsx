@@ -35,14 +35,14 @@ const jsonLd = {
 const Index = () => (
   <>
     <Helmet>
-      <title>Bioforte Dedetizadora | Controle de Pragas e Saneamento Ambiental</title>
+      <title>Bioforte Dedetizadora</title>
       <meta
         name="description"
         content="Bioforte Dedetizadora: controle de pragas urbanas, descupinização, afastamento de pássaros, limpeza de caixas d'água e sanitização. Solicite seu orçamento!"
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="canonical" href="https://bioforte.com.br" />
-      <meta property="og:title" content="Bioforte Dedetizadora | Controle de Pragas" />
+      <meta property="og:title" content="Bioforte Dedetizadora" />
       <meta property="og:description" content="Soluções completas em saneamento ambiental. Solicite seu orçamento sem compromisso!" />
       <meta property="og:type" content="website" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>

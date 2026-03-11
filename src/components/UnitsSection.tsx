@@ -15,8 +15,8 @@ const units: Unit[] = [
   { name: "Ribeirão Preto", state: "SP", type: "propria" },
   { name: "Franca", state: "SP", type: "propria" },
   { name: "Uberaba", state: "MG", type: "franquia" },
-  { name: "Araraquara", state: "SP", type: "licenciado" },
-  { name: "Guarapuava", state: "PR", type: "licenciado" },
+  { name: "Araraquara", state: "SP", type: "franquia" },
+  { name: "Guarapuava", state: "PR", type: "franquia" },
   { name: "Barretos", state: "SP", type: "franquia" },
 ];
 
