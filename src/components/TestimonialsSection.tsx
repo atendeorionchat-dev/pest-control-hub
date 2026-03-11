@@ -1,4 +1,5 @@
-import { Star } from "lucide-react";
+import { Star, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const testimonials = [
   { name: "Marcos Lima", time: "há 2 semanas", text: "Excelente atendimento! Profissionais muito capacitados e atenciosos. Resolveram meu problema de cupins rapidamente." },
